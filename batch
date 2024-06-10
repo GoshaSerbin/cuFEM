@@ -1,0 +1,10 @@
+#!/bin/sh
+#SBATCH --job-name=test_cuda
+#SBATCH --time=00:00:10
+#SBATCH --nodes=1 --cpus-per-task=1
+#SBATCH --partition=release
+#ulimit -l unlimited
+
+#cat `generate_pbs_nodefile`
+
+mpirun -np 1 ./build/cuFEM
